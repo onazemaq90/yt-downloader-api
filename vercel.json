@@ -2,14 +2,22 @@
   "version": 2,
   "builds": [
     {
-      "src": "api/download.py",
+      "src": "api/index.py",
       "use": "@vercel/python"
     }
   ],
   "routes": [
     {
-      "src": "/api/(.*)",
-      "dest": "api/download.py"
+      "src": "/api/download",
+      "dest": "api/index.py"
+    },
+    {
+      "src": "/docs",
+      "dest": "api/index.py"
+    },
+    {
+      "src": "/webpage",
+      "dest": "api/index.py"
     }
   ]
 }
